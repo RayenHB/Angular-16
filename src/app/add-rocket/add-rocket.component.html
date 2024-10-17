@@ -1,0 +1,34 @@
+<div class="container">
+    <div>
+        <h2>Ajouter un Rocket :</h2>
+    </div>
+    <form>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>ID Rocket</label>
+            <input type="text" [(ngModel)]="newRocket.idRocket" name="idRocket" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Nom Rocket</label>
+            <input type="text" [(ngModel)]="newRocket.nomRocket" name="nomRocket" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Prix Rocket</label>
+            <input type="number" [(ngModel)]="newRocket.budgetRocket" name="budgetRocket" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Date création</label>
+            <input type="date" [(ngModel)]="newRocket.dateCreation" name="dateCreation" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Rocket Type</label>
+            <select class="form-control form-control-lg" id="idTy" name="idTy" [(ngModel)]="newIdTy">
+                <option *ngFor="let ty of rocket_type" [value]="ty.id">
+                  {{ty.nomRocketType}}
+                </option>
+              </select>
+        </div>
+        <div class="mt-2">
+            <button type="submit" (click)="addRocket()" class="btn btn-success">Ajouter</button>
+        </div>
+    </form>
+</div>

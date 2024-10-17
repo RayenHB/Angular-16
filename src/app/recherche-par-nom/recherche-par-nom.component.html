@@ -1,0 +1,31 @@
+<div class="container">
+    <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2 mt-2 ">
+            <label>Nom Rocket en tapant</label>
+            <input class="form-control" #searchTerm (keyup)="onKeyUp(searchTerm.value)">
+        </div>
+    </form>
+    <div class="container">
+        <div class="card shadow mb-4">
+            <div class="card-body">
+                <table class="table table-striped">
+                    <tr>
+                        <th>Id</th>
+                        <th>Nom</th>
+                        <th>Prix</th>
+                        <th>Date Création</th>
+                        <th>Rocket type</th>
+                    </tr>
+                    <tbody *ngFor="let rocket of rockets">
+                        <tr>
+                            <td>{{rocket.idRocket}}</td>
+                            <td>{{rocket.nomRocket}}</td>
+                            <td>{{rocket.budgetRocket}}</td>
+                            <td>{{rocket.dateCreation | date:'dd/MM/yyyy'}}</td>
+                            <td>{{rocket.RocketType?.nomRocketType}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

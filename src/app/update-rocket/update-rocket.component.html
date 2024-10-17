@@ -1,0 +1,35 @@
+<div class="container">
+    <div>
+        <h2>Modifier un Rocket :</h2>
+    </div>
+    <form>
+        <div hidden class="col-sm-2 col-md-2 col-lg-2">
+            <label>ID Rocket</label>
+            <input readonly type="text" [(ngModel)]="currentRocket.idRocket" name="idRocket" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Nom Rocket</label>
+            <input type="text" [(ngModel)]="currentRocket.nomRocket" name="nomRocket" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Budget Rocket</label>
+            <input type="number" [(ngModel)]="currentRocket.budgetRocket" name="budgetRocket" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Date création</label>
+            <input type="date" [ngModel]="currentRocket.dateCreation | date: 'yyyy-MM-dd'"
+                (ngModelChange)=" currentRocket.dateCreation= $event" name="dateCreation" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Rocket Type</label>
+            <select class="form-control form-control-lg" id="idTy" name="idTy" [(ngModel)]="updatedTyId">
+                <option *ngFor="let ty of rocket_type" [value]="ty.id">
+                    {{ty.nomRocketType}}
+                </option>
+            </select>
+        </div>
+        <div class="mt-2">
+            <button type="submit" (click)="updateRocket()" class="btn btn-success">Modifer</button>
+        </div>
+    </form>
+</div>

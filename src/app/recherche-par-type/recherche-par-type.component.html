@@ -1,0 +1,8 @@
+<div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+    <label>Types </label>
+    <select class="form-control form-control-lg" id="idTy" name="idTy" [(ngModel)]="IdType" (change)="onChange()">
+        <option *ngFor="let Ty of Types" value="{{Ty.id}}">
+            {{Ty.nomRocketType}}
+        </option>
+    </select>
+</div>
